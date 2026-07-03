@@ -51,15 +51,16 @@ public class UserController {
                 if(check){
                     this.userService.getCurrentUser(mobile_number);
                     this.transactionService.getTransactionsByUserID(this.userService.getCurrentUserId());
-                    System.out.println("\nSuccessfully logged in!");
+                    System.out.println("Successfully logged in!");
                     System.out.println("\nHello, " + this.userService.getCurrentUserFullName());
+                    displayBalance();
                     return true;
                 } else {
                     System.out.println("Invalid PIN! " + (attempts-1) + " attempts remaining!");
                     --attempts;
                 }
             }while(attempts != 0);
-
+            System.out.println("Closing Program...");
             return false;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -120,8 +121,7 @@ public class UserController {
             boolean check = this.userService.registerUser(name, mobileNumber, pin);
 
             if(check){
-                System.out.println("\nSuccessfully registered user!");
-
+                System.out.println("Successfully registered user!\n");
             }
         } catch(Exception e){
             throw new RuntimeException(e);

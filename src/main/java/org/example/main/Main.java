@@ -71,10 +71,11 @@ public class Main {
 
     public static boolean displayMenu(UserController uc, Scanner sc) {
         int choice;
-        uc.displayBalance();
+        System.out.println("Welcome to the J-Cash Application");
         try{
             do{
-                System.out.println("\nWelcome to the J-Cash Application");
+                System.out.println("=============================");
+                System.out.println("========J-Cash Portal========");
                 System.out.println("1. Display Balance");
                 System.out.println("2. Cash-in");
                 System.out.println("3. Transfer Money");
