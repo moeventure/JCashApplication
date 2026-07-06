@@ -1,5 +1,5 @@
 CREATE TABLE `user` (
-    `user_id` INT(50) NOT NULL,
+    `user_id` INT(50) NOT NULL AUTO_INCREMENT,
     `full_name` VARCHAR(50) NOT NULL,
     `mobile_number` VARCHAR(13) NOT NULL,
     `pin` VARCHAR(255) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `transaction` (
-    `transaction_id` INT(50) NOT NULL,
+    `transaction_id` INT(50) NOT NULL AUTO_INCREMENT,
     `transaction_type` VARCHAR(20) NOT NULL,
     `amount` DOUBLE NOT NULL,
     `details` VARCHAR(50) NOT NULL,
